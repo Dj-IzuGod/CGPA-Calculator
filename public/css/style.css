@@ -1,0 +1,22 @@
+* {
+  margin: 0 10px;
+  padding: 5px;
+}
+.head,
+h1 {
+  background-color: green;
+
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: aliceblue;
+}
+section {
+  margin: 10px;
+  padding: 5px;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+}
+.semester1Table {
+  box-shadow: 2px black;
+}
