@@ -15,7 +15,8 @@ var courses = [
 ];
 var workItems = [];
 var courseUnit = [4, 3, 3, 3, 2, 2, 1, 1];
-var addedCourses = [];
+var addedCourses = [""];
+var addedCoursesCapital = addedCourses.toUpperCase();
 var addedUnits = [];
 
 app.set("view engine", "ejs");
@@ -38,7 +39,7 @@ app.get("/", function (req, res) {
     listTitle: day,
     newCourse: courses,
     newUnit: courseUnit,
-    addedCourse: addedCourses,
+    addedCourse: addedCoursesCapital,
     addedUnit: addedUnits,
   });
 });
