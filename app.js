@@ -47,39 +47,38 @@ app.get("/", function (req, res) {
   var day = today.toLocaleDateString("en-US", options);
 
   res.render("GP Calculator", {
-    listTitle: day,
+    title: "100L Semester 1",
     newCourse: courses,
     newUnit: courseUnit,
-    newCourse2: courses2,
-    newUnit2: courseUnit2,
     addedCourse: addedCourses,
     addedUnit: addedUnits,
-    addedCourse2: addedCourses2,
-    addedUnit2: addedUnits2,
+  });
+});
+
+app.get("/semester2", function (req, res) {
+  res.render("GP Calculator", {
+    title: "100LVL Semester 2",
+    newCourse: courses2,
+    newUnit: courseUnit2,
+    addedCourse: addedCourses2,
+    addedUnit: addedUnits2,
   });
 });
 
 app.post("/", function (req, res) {
-  var course = req.body.newCourse;
-  var caseCourse = course.toUpperCase();
-  var caseCourse2 = course2.toUpperCase();
-  var unit = req.body.newUnit;
-  var course2 = req.body.newCourse2;
-  var unit2 = req.body.newUnit2;
-  addedCourses.push(caseCourse);
-  addedUnits.push(unit);
-  addedCourses2.push(caseCourse2);
-  addedUnits2.push(unit2);
-});
-
-app.get("/work", function (req, res) {
-  res.render("list", { listTitle: "Work List", newList: workItems });
-});
-
-app.post("/work", function (req, res) {
-  let item = req.body.newItem;
-  workItems.push(item);
-  res.redirect("/work");
+  if (req.body.listSubmit == "100LVL") {
+    var course2 = req.body.newCourse;
+    var unit2 = req.body.newUnit;
+    addedCourses2.push(course2);
+    addedUnits2.push(unit2);
+    res.redirect("/semester2");
+  } else {
+    var course = req.body.newCourse;
+    var unit = req.body.newUnit;
+    addedCourses.push(course);
+    addedUnits.push(unit);
+    res.redirect("/");
+  }
 });
 
 app.listen(3000, function (req, res) {
