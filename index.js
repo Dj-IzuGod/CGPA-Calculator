@@ -1,4 +1,3 @@
-alert("Welcome to my site!");
 document.addEventListener("DOMContentLoaded", function () {
   const calculateButton = document.getElementById("calculateButton");
 
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cgpa = totalGradePoints / totalCreditUnits;
 
     // Display the CGPA
-    console.log(cgpa.toFixed(2));
-    
+    const cgpaDisplay = document.getElementById("cgpa");
+    cgpaDisplay.textContent = "Your CGPA is: " + cgpa.toFixed(2);
   });
 });
