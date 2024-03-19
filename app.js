@@ -71,13 +71,11 @@ app.post("/", function (req, res) {
     var unit2 = req.body.newUnit;
     addedCourses2.push(course2);
     addedUnits2.push(unit2);
-    res.redirect("/semester2");
   } else {
     var course = req.body.newCourse;
     var unit = req.body.newUnit;
     addedCourses.push(course);
     addedUnits.push(unit);
-    res.redirect("/");
   }
 });
 

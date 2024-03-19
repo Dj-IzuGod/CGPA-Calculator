@@ -17,7 +17,7 @@
       crossorigin="anonymous"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js" integrity="sha512-hIlMpy2enepx9maXZF1gn0hsvPLerXoLHdb095CmRY5HG3bZfN7XPBZ14g+TUDH1aGgfLyPHmY9/zuU53smuMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    
     <link rel="stylesheet" href="css/style.css" />
     <title>GPA Calculator</title>
   </head>
@@ -123,7 +123,7 @@
             placeholder="Course unit"
             autocomplete="off"
             required
-          />
+          /> <br> <br>
           <button
             type="submit"
             name="listSubmit"
@@ -132,15 +132,74 @@
             >
             <i class="fa-solid fa-plus"></i>Add Course
           </button>
-        </form> <br>
+        </form>
+        <form class="item" >
+           <button class="btn btn-secondary" id="calculateButton">Calculate</button> 
+        <br>
+        <h3 id="cgpa"></h3>
+         
         <% if (title == "100L Semester 1") { %>
  <button class="btn btn-secondary"><a href="/semester2">Check next semester -></a></button>
  <%} else{ %>
   <button class="btn btn-secondary"><a href="/">Back</a></button>
 <%} %>
-             </div>
-      <br />
+        </form>
+         </div>
     </section>
+    <script >
+    
+document.addEventListener("DOMContentLoaded", function () {
+  const calculateButton = document.getElementById("calculateButton");
+
+  calculateButton.addEventListener("click", function () {
+    
+    const tableRows = document.querySelectorAll(".semester1Table tbody tr");
+
+    let totalCreditUnits = 0;
+    let totalGradePoints = 0;
+
+    tableRows.forEach(function (row) {
+      const credit = parseFloat(row.children[2].innerText);
+      const grade = row.children[3].querySelector("select").value;
+
+      let gradePoint;
+      switch (grade) {
+        case "a":
+          gradePoint = 5.0;
+          break;
+        case "b":
+          gradePoint = 4.0;
+          break;
+        case "c":
+          gradePoint = 3.0;
+          break;
+        case "d":
+          gradePoint = 2.0;
+          break;
+        case "e":
+          gradePoint = 1.0;
+          break;
+        case "f":
+          gradePoint = 0.0;
+          break;
+        default:
+          gradePoint = 0.0;
+      }
+
+      totalCreditUnits += credit;
+      totalGradePoints += credit * gradePoint;
+    });
+
+    const cgpa = totalGradePoints / totalCreditUnits;
+
+    // Display the CGPA
+    console.log(cgpa.toFixed(2));
+    const cgpaDisplay = document.getElementById("cgpa");
+    cgpaDisplay.textContent = "Your CGPA is: " + cgpa.toFixed(2);
+    
+  });
+});
+</script>
     <script>
       const inputField = document.getElementById("myInput");
 
@@ -169,5 +228,6 @@
       src="https://kit.fontawesome.com/036e1f8459.js"
       crossorigin="anonymous"
     ></script>
+    
   </body>
 </html>
