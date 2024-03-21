@@ -1,9 +1,10 @@
 * {
-  margin: 0 10px;
-  padding: 5px;
+  margin: 0 5px;
+  padding: 2px;
 }
 .head {
   background: url(/img/High-Resolution-Background-Images.jpg);
+  background-position: center;
 
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -33,4 +34,5 @@ a{
   width: 90px;
   height: 110px;
   margin: 10px;
+ text-align: end;
 }
