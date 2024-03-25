@@ -23,7 +23,7 @@
   </head>
   <body>
     <div class="head">
-      <img src="img/GP-pics.png" class="pics" alt="my pics" >
+      <img src="https://sipisi-images.s3.eu-north-1.amazonaws.com/GP-pics.png" class="pics" alt="my pics" >
       <h1><span class="typing"></span></h1>
     </div>
     <section>
@@ -56,6 +56,7 @@
               <td><%= newUnit[i] %></td>
               <td>
                 <select name="grade" id="grade">
+                  <option value="#" disabled>Select</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
                   <option value="c">C</option>
@@ -79,6 +80,7 @@
               <td>1</td>
               <td>
                 <select name="grade" id="grades">
+                  <option value="#" disabled>Select</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
                   <option value="c">C</option>
@@ -95,6 +97,7 @@
               <td><%= addedUnit[j] %></td>
               <td class="<%= j + 10 %>">
                 <select name="grade" id="grade1">
+                  <option value="#" disabled>Select</option>
                   <option value="a">A</option>
                   <option value="b">B</option>
                   <option value="c">C</option>
