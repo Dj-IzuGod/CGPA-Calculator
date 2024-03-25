@@ -111,7 +111,7 @@
           </tbody>
         </table>
 
-        <form class="item" action="/" method="post">
+        <!-- <form class="item" action="/" method="post" id="myForm">
           <input
             type="text"
             name="newCourse"
@@ -135,7 +135,7 @@
             >
             <i class="fa-solid fa-plus"></i>Add Course
           </button>
-        </form>
+        </form> -->
         <div class="item" >
            <button class="btn btn-secondary" id="calculateButton">Calculate</button> 
         <br>
@@ -150,6 +150,7 @@
          </div>
     </section>
     <script >
+      var form = document.getElementById("myForm"); function handleForm(event) { event.preventDefault(); } form.addEventListener('submit', handleForm);
     
 document.addEventListener("DOMContentLoaded", function () {
   const calculateButton = document.getElementById("calculateButton");

@@ -12,6 +12,8 @@ var courses = [
   "GST103",
   "ENG101",
   "ENG103",
+  "PHY107",
+  "CHM107",
 ];
 var courses2 = [
   "MTH102",
@@ -19,11 +21,14 @@ var courses2 = [
   "CHM102",
   "BIO102",
   "GST102",
-  "GST102",
+  "GST108",
+  "GST110",
   "ENG102",
   "ENG104",
+  "PHY108",
+  "CHM108",
 ];
-var courseUnit2 = [4, 3, 3, 3, 2, 2, 1, 1];
+var courseUnit2 = [4, 3, 3, 3, 2, 2, 1, 1, 1];
 var addedCourses2 = [];
 var addedUnits2 = [];
 var courseUnit = [4, 3, 3, 3, 2, 2, 1, 1];
