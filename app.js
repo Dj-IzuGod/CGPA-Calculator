@@ -28,7 +28,7 @@ var courses2 = [
   "PHY108",
   "CHM108",
 ];
-var courseUnit2 = [4, 3, 3, 3, 2, 2, 1, 1, 1];
+var courseUnit2 = [4, 3, 3, 3, 2, 2, 1, 1, 1 ];
 var addedCourses2 = [];
 var addedUnits2 = [];
 var courseUnit = [4, 3, 3, 3, 2, 2, 1, 1];
